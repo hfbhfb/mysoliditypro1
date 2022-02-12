@@ -9,16 +9,16 @@ contract StateVariables {
         owner = msg.sender;
     }
 
-    function setName(string _name) public returns (string) {
-        if (msg.sender == owner) {
-            name = _name;
-        } else {
-            revert("Permission denied");
+    function setName(string _name) public returns(string){
+        if(msg.sender == owner){
+            name = _name
+        }else{
+            revert("Permission denied)
         }
         return name;
     }
 
-    function getName() public view returns (string) {
+    function getName() public view returns(string){
         return name;
     }
 }
